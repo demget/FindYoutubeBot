@@ -1,0 +1,27 @@
+{
+    "long_poller": {},
+
+    "inline_buttons": {
+        "search": {
+            "text": "🔎 Начать поиск",
+            "inline_query_current_chat": ""
+        }
+    },
+
+    "inline_keyboards": {
+        "search": [["search"]]
+    },
+
+    "inline_results": {
+        "video": {
+            "type": "article",
+            "id": "{{.VideoID}}",
+            "title": "{{jsq .Title}}",
+            "description": "👤 {{jsq .ChannelTitle}}",
+            "url": "https://youtu.be/{{.VideoID}}",
+            "hide_url": true,
+            "thumb_url": "{{.Thumbnail.URL}}",
+            "message_text": "https://youtu.be/{{.VideoID}}"
+        }
+    }
+}
