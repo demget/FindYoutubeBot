@@ -5,6 +5,11 @@
         "search": {
             "text": "🔎 Начать поиск",
             "inline_query_current_chat": ""
+        },
+        "get": {
+            "unique": "get",
+            "text": "{{.Index}}",
+            "callback_data": "{{.VideoID}}"
         }
     },
 

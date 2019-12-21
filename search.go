@@ -6,8 +6,9 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"time"
 	"os"
+	"strconv"
+	"time"
 )
 
 type SearchResult struct {
@@ -25,12 +26,12 @@ type SearchResult struct {
 	}
 }
 
-func searchVideos(query string) ([]SearchResult, error) {
+func searchVideos(query string, count int) ([]SearchResult, error) {
 	params := make(url.Values)
 	params.Set("part", "snippet")
 	params.Set("q", query)
 	params.Set("key", os.Getenv("API_KEY"))
-	params.Set("maxResults", "25")
+	params.Set("maxResults", strconv.Itoa(count))
 	params.Set("regionCode", "RU")
 	params.Set("type", "video")
 

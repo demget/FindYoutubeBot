@@ -1,0 +1,5 @@
+{{ range $i, $r := . }}
+*{{ add $i 1 }}. {{ .Title }}*
+Канал: {{ .ChannelTitle }}
+Опубликован: {{ timeago .PublishedAt }}
+{{ end }}
