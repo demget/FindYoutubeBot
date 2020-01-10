@@ -9,6 +9,7 @@ import (
 
 	"github.com/SerhiiCho/timeago"
 	tb "github.com/demget/telebot"
+	"github.com/demget/telebot/tbutil"
 )
 
 func main() {
@@ -110,7 +111,7 @@ func onGet(b *tb.Bot) func(c *tb.Callback) {
 
 func onQuery(b *tb.Bot) func(q *tb.Query) {
 	return func(q *tb.Query) {
-		if q.Text == "" {
+		if q.Text == "" || !tbutil.LimitQuery(q, time.Second) {
 			return
 		}
 
